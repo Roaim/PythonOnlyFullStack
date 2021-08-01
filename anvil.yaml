@@ -1,0 +1,71 @@
+dependencies:
+- app_id: BOJZK76FMAI3RVEZ
+  version: {dev: false}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: false}
+package_name: MayIComeInMadam
+allow_embedding: false
+name: MayIComeInMadam
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {title: May I Come In Madam, description: Full-stack web app built with nothing but python with Anvil framework.}
+startup_form: Dashboard
+db_schema:
+- name: episodes
+  id: 141748
+  python_name: episodes
+  columns:
+    1Xeq9Zu7Y7I=:
+      name: episode_list
+      type: simpleObject
+      admin_ui: {order: 1, width: 442}
+    zpIRbBKu8X8=:
+      name: session
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: episodes, app_id: 6QDX36P6FY2EWO4O, server: full, client: none,
+    table_mapping_name: null, table_mapping_id: null, table_id: 141748}
+- name: admin
+  id: 145108
+  python_name: admin
+  columns:
+    1jLhYaSTPaI=:
+      name: key
+      type: string
+      admin_ui: {order: 0, width: 200}
+    _EuvL3UfsOw=:
+      name: value
+      type: string
+      admin_ui: {order: 1, width: 200}
+  access: {python_name: admin, app_id: 6QDX36P6FY2EWO4O, server: full, client: none,
+    table_mapping_name: null, table_mapping_id: null, table_id: 145108}
+- name: sessions
+  id: 142061
+  python_name: sessions
+  columns:
+    ULLU8Oaxp0M=:
+      name: session
+      type: string
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: sessions, app_id: 6QDX36P6FY2EWO4O, server: full, client: none,
+    table_mapping_name: null, table_mapping_id: null, table_id: 142061}
+- name: history
+  id: 142064
+  python_name: history
+  columns:
+    0ZI7Upd7Zq4=:
+      name: session
+      type: string
+      admin_ui: {order: 0, width: 200}
+    hiaWx30OWvA=:
+      name: updated
+      type: datetime
+      admin_ui: {order: 2, width: 200}
+    tqUlHzNZyas=:
+      name: episode
+      type: simpleObject
+      admin_ui: {order: 1, width: 200}
+  access: {python_name: history, app_id: 6QDX36P6FY2EWO4O, server: full, client: none,
+    table_mapping_name: null, table_mapping_id: null, table_id: 142064}
+renamed: true

@@ -1,0 +1,46 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+  name: card_attachment
+  layout_properties: {grid_position: 'NBZBVA,ZKPBFH'}
+  components:
+  - type: Image
+    properties: {role: null, vertical_align: center, height: 165, tooltip: '', border: '',
+      foreground: '', visible: true, display_mode: fill_width, spacing_above: small,
+      source: '', spacing_below: small, background: '', horizontal_align: center}
+    name: image_cover
+    layout_properties: {grid_position: 'SHYCSX,RFPMGP ISYXIE,VSGTQD', width: 327,
+      full_width_row: false}
+    data_bindings:
+    - {property: source, code: 'self.item[''cover'']'}
+  - type: Label
+    properties: {role: text, align: right, tooltip: '', border: '', foreground: 'theme:Gray
+        600', visible: true, text: '', font_size: 15, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: label_duration
+    layout_properties: {grid_position: 'SHYCSX,RFPMGP ZJHTWD,CTELVR', full_width_row: false}
+    data_bindings:
+    - {property: text, code: 'self.sec_str(self.item[''duration''])'}
+  - type: RepeatingPanel
+    properties: {role: null, tooltip: '', border: '', foreground: '', items: null,
+      visible: true, spacing_above: small, spacing_below: small, item_template: List.ItemTemplateSeason.ItemTemplateEpisode.ItemTemplateAttachment.ItemTemplateVideo,
+      background: ''}
+    name: repeating_panel_1
+    layout_properties: {grid_position: 'SHYCSX,ITPYMB XQZTIK,LCZGOC', full_width_row: false}
+    data_bindings:
+    - {property: items, code: 'self.item[''items'']'}
+  - type: Button
+    properties: {role: secondary-color, align: right, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: false, text: '', font_size: null, font: '', spacing_above: large,
+      icon_align: right, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: 'fa:trash'}
+    name: button_delete
+    layout_properties: {grid_position: 'SHYCSX,ITPYMB THXMQO,XBDOLS', full_width_row: false}
+    event_bindings: {click: button_delete_click}
+is_package: true

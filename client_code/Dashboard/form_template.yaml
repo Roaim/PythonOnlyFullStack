@@ -1,0 +1,66 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: small, spacing_above: none, col_widths: '{}', spacing_below: none,
+    background: ''}
+  name: column_panel_nav
+  layout_properties: {slot: left-nav}
+  components:
+  - type: Image
+    properties: {role: null, vertical_align: top, height: '100', tooltip: '', border: '',
+      foreground: '', visible: true, display_mode: fill_width, spacing_above: none,
+      source: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrPGqgM3ImTd6nyt1XWAj4rCmIszvRLE4AhN7ZYHS-5yLVxfrK3nSDy1Q6IPEQvxZzwK8&usqp=CAU',
+      spacing_below: large, background: '', horizontal_align: center}
+    name: image_1
+    layout_properties: {grid_position: 'VZVAEZ,NPWVLB'}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: May I Come In Madam, font_size: null, wrap_on: mobile,
+      font: '', col_spacing: medium, spacing_above: large, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: link_list
+    layout_properties: {grid_position: 'ERXUYS,GCWCYI'}
+    event_bindings: {click: handle_nav_click}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Watched Episodes, font_size: null, wrap_on: mobile, font: '',
+      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: link_history
+    layout_properties: {grid_position: 'OWDUQO,AMWKUK'}
+    event_bindings: {click: handle_nav_click}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Upload, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: link_upload
+    layout_properties: {grid_position: 'YPSYTE,VFIOTB'}
+    event_bindings: {click: handle_nav_click}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: Delete Season, font_size: null, wrap_on: mobile, font: '',
+      col_spacing: medium, spacing_above: small, icon_align: left, col_widths: '',
+      spacing_below: small, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: link_delete
+    layout_properties: {grid_position: 'YMBHUI,UHQXPY'}
+    event_bindings: {click: handle_nav_click}
+- type: Label
+  properties: {}
+  name: label_title
+  layout_properties: {slot: title}

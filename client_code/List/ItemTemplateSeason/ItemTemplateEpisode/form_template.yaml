@@ -1,0 +1,62 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: Label
+  properties: {role: text, align: right, tooltip: '', border: '', foreground: '#999999',
+    visible: true, text: '', font_size: 12, font: '', spacing_above: large, icon_align: left,
+    spacing_below: medium, italic: false, background: '', bold: false, underline: false,
+    icon: ''}
+  name: label_time
+  layout_properties: {grid_position: 'JIZKPT,XINXRM'}
+  data_bindings:
+  - {property: text, code: 'self.convert_timestamp(self.item[''releaseTime''])'}
+- type: ColumnPanel
+  properties: {role: card, col_widths: '{"DINIKJ":40}'}
+  name: card_micim
+  layout_properties:
+    col_widths: {}
+    grid_position: HUFHJJ,LQIKYU
+  components:
+  - type: FlowPanel
+    properties: {role: null, spacing: medium, align: justify, tooltip: '', border: '',
+      foreground: '', visible: true, spacing_above: none, spacing_below: none, background: ''}
+    name: flow_panel_1
+    layout_properties: {grid_position: 'VRSMGA,DINIKJ'}
+    components:
+    - type: Label
+      properties: {role: subheading, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: '', font_size: 14, font: '', spacing_above: none, icon_align: left,
+        spacing_below: none, italic: false, background: '', bold: true, underline: false,
+        icon: ''}
+      name: label_episode
+      layout_properties: {grid_position: 'JOEJSK,KDYGKV'}
+      data_bindings:
+      - {property: text, code: 'self.item[''episode'']'}
+    - type: Label
+      properties: {role: subheading, align: left, tooltip: '', border: '', foreground: '',
+        visible: true, text: '', font_size: 14, font: '', spacing_above: none, icon_align: left,
+        spacing_below: none, italic: false, background: '', bold: false, underline: false,
+        icon: ''}
+      name: label_session
+      layout_properties: {grid_position: 'JOEJSK,AHJGQO'}
+      data_bindings:
+      - {property: text, code: 'self.item[''session'']'}
+  - type: Link
+    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, wrap_on: mobile, font: '', col_spacing: small,
+      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: link_episode
+    layout_properties: {grid_position: 'AIIKCW,OAVTWO'}
+    data_bindings:
+    - {property: text, code: 'self.item[''link'']'}
+    - {property: url, code: 'self.item[''link'']'}
+    event_bindings: {click: link_episode_click}
+  - type: RepeatingPanel
+    properties: {item_template: List.ItemTemplateSeason.ItemTemplateEpisode.ItemTemplateAttachment}
+    name: repeating_panel_attachment
+    layout_properties: {grid_position: 'NCXXPI,ABLSSM'}
+    data_bindings:
+    - {property: items, code: 'self.item[''attachments'']'}
+is_package: true

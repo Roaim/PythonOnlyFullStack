@@ -1,0 +1,43 @@
+container:
+  type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: tiny, spacing_above: small, col_widths: '{}', spacing_below: small,
+    background: ''}
+components:
+- type: ColumnPanel
+  properties: {role: card, tooltip: '', border: '', foreground: 'theme:Gray 100',
+    visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"TZYRDO":17,"ESIHPB":23}',
+    spacing_below: small, background: 'theme:CardRes'}
+  name: card_video
+  layout_properties: {grid_position: 'UXRCUR,VCZAAC', full_width_row: false}
+  components:
+  - type: Label
+    properties: {role: text, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 14, font: '', spacing_above: none, icon_align: left,
+      spacing_below: none, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_size
+    layout_properties: {grid_position: 'XXHYLY,TZYRDO', full_width_row: false}
+    data_bindings:
+    - {property: text, code: 'self.convert_bytes(self.item[''file_size''])'}
+  - type: Label
+    properties: {role: text, align: right, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: 14, font: '', spacing_above: none, icon_align: left,
+      spacing_below: none, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_resolution
+    layout_properties: {grid_position: 'XXHYLY,ESIHPB', full_width_row: false}
+    data_bindings:
+    - {property: text, code: 'self.resolution_str(self.item[''resolution''], self.item[''width''],
+        self.item[''height''])'}
+  - type: Link
+    properties: {role: video-link, url: '', align: left, tooltip: '', border: '',
+      foreground: '', visible: true, text: '', font_size: null, wrap_on: mobile, font: '',
+      col_spacing: large, spacing_above: none, icon_align: left, col_widths: '', spacing_below: none,
+      italic: false, background: '', bold: false, underline: false, icon: ''}
+    name: link_url
+    layout_properties: {grid_position: 'JATOPR,YUGWWZ'}
+    data_bindings:
+    - {property: url, code: 'self.item[''url'']'}
+    - {property: text, code: 'self.item[''url'']'}
+is_package: true

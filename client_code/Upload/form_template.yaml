@@ -1,0 +1,74 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: column_panel_main
+  layout_properties: {grid_position: 'FFLYOH,KUQBTS'}
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: Upload JSON file, font_size: 24, font: '', spacing_above: large,
+      icon_align: left, spacing_below: large, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'FVVZHI,MRUZKE'}
+  - type: FileLoader
+    properties:
+      role: null
+      show_state: true
+      align: center
+      tooltip: ''
+      border: ''
+      file_types: application/json
+      enabled: true
+      files: []
+      foreground: ''
+      visible: true
+      text: Choose File
+      font_size: 16
+      font: ''
+      spacing_above: small
+      icon_align: left
+      spacing_below: small
+      italic: false
+      file: null
+      background: ''
+      bold: false
+      underline: false
+      multiple: false
+      icon: fa:upload
+    name: file_loader_main
+    layout_properties: {grid_position: 'MWQDKF,LZVNRT'}
+    event_bindings: {change: handle_file}
+- type: TextBox
+  properties: {role: null, align: center, hide_text: true, tooltip: '', placeholder: Password (Max 3 tries only),
+    border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 16,
+    font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+    background: '', bold: false, underline: false}
+  name: text_box_password
+  layout_properties: {grid_position: 'FDXAIF,TKZZRE', full_width_row: false, row_background: 'theme:Gray
+      100'}
+- type: Button
+  properties: {role: primary-color, align: full, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: Store, font_size: 16, font: '', spacing_above: large,
+    icon_align: right, spacing_below: large, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:floppy-o'}
+  name: button_1
+  layout_properties: {grid_position: 'OUIJAS,RMLWFP', full_width_row: false}
+  event_bindings: {click: continue_click}
+- type: Label
+  properties: {role: headline, align: left, tooltip: '', border: '', foreground: '#55c0f0',
+    visible: true, text: File Preview, font_size: null, font: '', spacing_above: large,
+    icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_preview
+  layout_properties: {grid_position: 'ZSODOV,SJUQMC'}
+- type: Label
+  properties: {role: text, align: left, tooltip: '', border: '', foreground: '', visible: true,
+    text: '', font_size: 12, font: '', spacing_above: small, icon_align: left, spacing_below: small,
+    italic: false, background: '', bold: false, underline: false, icon: ''}
+  name: label_content
+  layout_properties: {grid_position: 'KQMPSD,VLBZNT'}
+is_package: true
